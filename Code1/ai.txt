@@ -1,0 +1,175 @@
+ Unit 1: Introduction to AI
+Q1. What is Artificial Intelligence?
+Answer:
+AI is the simulation of human intelligence in machines. It enables systems to learn, reason, and make decisions like humans.
+Example: Chatbots, self-driving cars.
+
+Q2. What is the Turing Test?
+Answer:
+A test proposed by Alan Turing to determine a machine's ability to exhibit intelligent behavior indistinguishable from that of a human.
+
+Q3. Define intelligent agent.
+Answer:
+An intelligent agent perceives its environment and takes actions to achieve its goals.
+Example: Google Assistant, robot vacuum cleaner.
+
+✅ Unit 2: Problem Solving and Search
+Q1. Difference between BFS and DFS.
+BFS	DFS
+Uses Queue	Uses Stack (or Recursion)
+Finds shortest path	May not find shortest path
+Level-wise	Depth-wise
+
+Q2. Explain A* algorithm.
+Answer:
+A* = g(n) + h(n)
+
+g(n): cost to reach current node
+
+h(n): heuristic estimate to goal
+
+It selects the node with the lowest total cost.
+
+Q3. What is heuristic?
+Answer:
+A heuristic is a rule of thumb to estimate the cost from the current node to the goal, used in informed search algorithms.
+
+✅ Unit 3: Knowledge Representation and Reasoning
+Q1. What is Propositional Logic?
+Answer:
+A form of logic that uses statements (propositions) which are either true or false.
+Example: "It is raining" (True/False).
+
+Q2. What is Predicate Logic?
+Answer:
+An extension of propositional logic that includes quantifiers and predicates.
+Example: ∀x: Human(x) → Mortal(x)
+
+Q3. Forward vs Backward Chaining
+Forward Chaining	Backward Chaining
+Data-driven	Goal-driven
+Starts from facts	Starts from goal
+Used in expert systems	Used in diagnostics
+
+✅ Unit 4: Planning
+Q1. What is STRIPS?
+Answer:
+STRIPS (Stanford Research Institute Problem Solver) is a formal language used to define planning problems with:
+
+Initial State
+
+Goal State
+
+Operators (actions with preconditions and effects)
+
+Q2. What is a planning graph?
+Answer:
+A layered graph structure used in AI planning to represent action sequences and possible outcomes efficiently.
+
+✅ Unit 5: Machine Learning Basics
+Q1. Types of ML
+Type	Description	Example
+Supervised	Labeled data	Email spam detection
+Unsupervised	Unlabeled data	Customer segmentation
+Reinforcement	Agent learns by reward	Game playing agent
+
+Q2. What is Overfitting?
+Answer:
+Model learns noise and performs well on training data but poorly on test data.
+
+Q3. KNN Algorithm (with example)
+Answer:
+K-Nearest Neighbors classifies a point based on majority label of its K nearest neighbors in feature space.
+Example: Classify a new fruit based on size and color.
+
+✅ Unit 6: Expert Systems
+Q1. What is an expert system?
+Answer:
+A computer system that emulates decision-making ability of a human expert.
+Components:
+
+Knowledge base
+
+Inference engine
+
+User interface
+
+Q2. Example: MYCIN
+Answer:
+An expert system for diagnosing bacterial infections and recommending antibiotics.
+
+Would you like practical viva questions with code (Python/sklearn) as well?
+
+
+
+
+
+
+
+You said:
+Types of searches 
+ChatGPT said:
+Here’s a concise explanation of the Types of Search Strategies in Artificial Intelligence, classified into two broad categories: Uninformed (Blind) and Informed (Heuristic) search methods.
+
+✅ 1. Uninformed Search (Blind Search)
+These algorithms do not have any domain-specific knowledge beyond the problem definition.
+
+🔹 Breadth-First Search (BFS)
+Explores level-by-level.
+
+Data Structure: Queue (FIFO)
+
+Complete: Yes
+
+Optimal: Yes (if cost per step is uniform)
+
+Time/Space Complexity: O(b^d)
+b = branching factor, d = depth of shallowest goal
+
+🔹 Depth-First Search (DFS)
+Explores as deep as possible, backtracks if needed.
+
+Data Structure: Stack (LIFO) or Recursion
+
+Complete: No (infinite depth)
+
+Optimal: No
+
+Time Complexity: O(b^m), m = max depth
+
+🔹 Uniform Cost Search
+Expands the node with the lowest cost (not necessarily depth).
+
+Data Structure: Priority Queue
+
+Complete & Optimal: Yes (if step cost > 0)
+
+🔹 Depth-Limited Search
+DFS with a maximum depth limit.
+
+Helps avoid infinite loops.
+
+Complete: No (if depth limit < goal depth)
+
+🔹 Iterative Deepening DFS
+Combines DFS space efficiency and BFS completeness.
+
+Repeats DFS with increasing depth limits.
+
+✅ 2. Informed Search (Heuristic Search)
+These use domain-specific heuristics to guide the search.
+
+🔹 Greedy Best-First Search
+Uses heuristic function h(n) (estimate of cost from node to goal).
+
+Chooses node with lowest h(n).
+
+Not Optimal and may get stuck.
+
+🔹 A Search*
+Combines UCS and Greedy: f(n) = g(n) + h(n)
+(g = cost so far, h = estimated cost to goal)
+
+Complete: Yes
+
+Optimal: Yes (if h is admissible and consistent)

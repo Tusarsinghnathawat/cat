@@ -41,3 +41,72 @@ int main() {
     cout << "Decrypted Text: " << decrypted << endl;
     return 0;
 }
+
+
+//  What is a Transposition Cipher?
+// Instead of changing the letters (like Caesar cipher), it rearranges the order of the letters in a systematic way.
+
+// ✅ Encryption Logic
+// cpp
+// Copy
+// Edit
+// string encrypt(string plaintext, int key)
+// Padding the plaintext:
+
+// If the length of the text isn't divisible by the key (number of columns), it adds underscores _ to fill the grid.
+
+// This ensures you can make a rectangle of rows and columns.
+
+// Column-wise reading:
+
+// It reads the characters column by column from the rectangle and stores them into the encrypted message.
+
+// 🔄 Example:
+// For "HELLOTRANSPOSITION" and key = 5, it would form this grid:
+
+// mathematica
+// Copy
+// Edit
+// H E L L O  
+// T R A N S  
+// P O S I T  
+// I O N _ _  
+// Then read column-wise:
+
+// rust
+// Copy
+// Edit
+// HTPI  EROO  LASN  LNII  OS_T
+// ↓     ↓      ↓      ↓     ↓
+// H -> T -> P -> I    (1st col)
+// E -> R -> O -> O    (2nd col)
+// L -> A -> S -> N    ...
+// L -> N -> I -> I
+// O -> S -> T -> _
+
+// Final Encrypted: HTPIEROOLASNLNIIOST_
+// 🔓 Decryption Logic
+// cpp
+// Copy
+// Edit
+// string decrypt(string ciphertext, int key)
+// It calculates the number of rows from the length and key.
+
+// It fills the grid column by column using the encrypted text.
+
+// Then reads it row by row to reconstruct the original message.
+
+// Removes the extra _ padding at the end.
+
+// 🧪 What the main() does:
+// cpp
+// Copy
+// Edit
+// string text = "HELLOTRANSPOSITION";
+// int key = 5;
+// It sets up an original message and a key (5 columns).
+
+// Encrypts the text.
+
+// Then decrypts it back to verify that it works.
+
